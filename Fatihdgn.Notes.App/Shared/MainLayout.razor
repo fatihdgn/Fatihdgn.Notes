@@ -1,3 +1,24 @@
 ﻿@inherits LayoutComponentBase
 
-@Body
+<div class="drawer">
+    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+        <div class="flex flex-row absolute top-3 left-3 items-center">
+            <label for="my-drawer"
+                   class="btn btn-primary drawer-button"><i class="fa-solid fa-bars"></i></label>
+            <span class="text-3xl ml-3">Notes</span>
+        </div>
+        <div class="flex flex-col mt-16">
+            @Body
+        </div>
+    </div>
+    <div class="drawer-side">
+        <label for="my-drawer" class="drawer-overlay"></label>
+        <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
+            <h1 class="text-3xl mb-3">Notes</h1>
+            <!-- Sidebar content here -->
+            <li class="mb-2"><a>Note 1</a></li>
+            <li><a>Note 2</a></li>
+        </ul>
+    </div>
+</div>

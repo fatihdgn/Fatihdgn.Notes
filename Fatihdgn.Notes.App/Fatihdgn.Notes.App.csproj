@@ -50,7 +50,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.9" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fatihdgn.Notes.Context\Fatihdgn.Notes.Context.csproj" />
   </ItemGroup>
 
   <Target Name="Prebuild" BeforeTargets="Build">
