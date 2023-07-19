@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Fatihdgn.Notes.App.Data;
-using Fatihdgn.Notes.Context;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Fatihdgn.Notes.App;
 
@@ -19,14 +18,12 @@ public static class MauiProgram
 
         builder.Services.AddMauiBlazorWebView();
 
-        builder.Services.AddDbContext<NotesDB>(options => options.UseSqlite("Data Source=notes.db"));
-
 #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();
         builder.Logging.AddDebug();
 #endif
 
-        builder.Services.AddSingleton<WeatherForecastService>();
+        builder.Services.AddSingleton<NotesDB>();
 
         return builder.Build();
     }

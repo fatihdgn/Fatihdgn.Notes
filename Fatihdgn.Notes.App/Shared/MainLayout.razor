@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using Fatihdgn.Notes.App.Data;
+@inherits LayoutComponentBase
+@inject NotesDB context
 
 <div class="drawer">
     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
@@ -15,10 +17,24 @@
     <div class="drawer-side">
         <label for="my-drawer" class="drawer-overlay"></label>
         <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
+
             <h1 class="text-3xl mb-3">Notes</h1>
             <!-- Sidebar content here -->
-            <li class="mb-2"><a>Note 1</a></li>
-            <li><a>Note 2</a></li>
+            @foreach (var note in Notes)
+            {
+                <li class="mb-2"><a>@note.Name</a></li>
+            }
         </ul>
     </div>
 </div>
+
+@code {
+    private List<Note> Notes { get; set; } = new List<Note>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Notes = await context.GetItemsAsync();
+
+        StateHasChanged();
+    }
+}

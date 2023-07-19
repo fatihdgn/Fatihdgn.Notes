@@ -4,8 +4,6 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fatihdgn.Notes.App", "Fatihdgn.Notes.App\Fatihdgn.Notes.App.csproj", "{B7C04647-D8C2-417A-9028-3C596C4627C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fatihdgn.Notes.Context", "Fatihdgn.Notes.Context\Fatihdgn.Notes.Context.csproj", "{3F5A2223-22C9-4158-B1AD-EA57E30ED415}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,15 +16,12 @@ Global
 		{B7C04647-D8C2-417A-9028-3C596C4627C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7C04647-D8C2-417A-9028-3C596C4627C1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B7C04647-D8C2-417A-9028-3C596C4627C1}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{3F5A2223-22C9-4158-B1AD-EA57E30ED415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F5A2223-22C9-4158-B1AD-EA57E30ED415}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F5A2223-22C9-4158-B1AD-EA57E30ED415}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F5A2223-22C9-4158-B1AD-EA57E30ED415}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+		SolutionGuid = {61C4543A-8410-404D-9109-D4C0160102AE}
 	EndGlobalSection
 EndGlobal
