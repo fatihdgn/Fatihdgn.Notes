@@ -1,13 +1,15 @@
 ﻿@page "/"
 @using Fatihdgn.Notes.App.Data;
+@using Fatihdgn.Notes.App.ViewModels;
 @inject NotesDB context
+@inject NoteViewModel vm
+@inject NavigationManager nav
 
-<NavLink class="underline" href="/counter">Go to Counter</NavLink>
 
 <div class="flex flex-row p-2">
 @foreach(var note in Notes)
 {
-  <div class="flex flex-row bg-secondary rounded border-2 border-primary p-2 mr-5">
+        <div class="flex flex-row bg-secondary rounded border-2 border-primary p-2 mr-5 pointer-cursor" @onclick="() => SelectNote(note)">
       <span class="text-lg">@note.Name</span>
   </div>
 }
@@ -20,6 +22,13 @@
     {
         Notes = await context.GetItemsAsync();
 
+        StateHasChanged();
+    }
+
+    public void SelectNote(Note note)
+    {
+        vm.ApplyEntity(note);
+        nav.NavigateTo("/note-view");
         StateHasChanged();
     }
 }

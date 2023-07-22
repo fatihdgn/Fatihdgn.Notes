@@ -1,0 +1,16 @@
+﻿@page "/note-view"
+@using Fatihdgn.Notes.App.Data;
+@using Fatihdgn.Notes.App.ViewModels;
+@inject NoteViewModel vm
+@inject NotesDB notes
+
+<button class="btn btn-ghost absolute right-3 top-3" @onclick="SaveAsync">Save</button>
+<textarea class="textarea textarea-ghost m-3" placeholder="Write what's on your mind...'" @bind="vm.Content"></textarea>
+
+@code {
+    async Task SaveAsync()
+    {
+        await notes.SaveItemAsync(vm.AsEntity());
+        StateHasChanged();
+    }
+}

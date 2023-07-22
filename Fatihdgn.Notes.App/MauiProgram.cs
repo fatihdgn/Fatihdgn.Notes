@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Fatihdgn.Notes.App.Data;
 using Microsoft.Extensions.Configuration;
+using Fatihdgn.Notes.App.ViewModels;
 
 namespace Fatihdgn.Notes.App;
 
@@ -24,6 +25,7 @@ public static class MauiProgram
 #endif
 
         builder.Services.AddSingleton<NotesDB>();
+        builder.Services.AddSingleton<NoteViewModel>();
 
         return builder.Build();
     }
